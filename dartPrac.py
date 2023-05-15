@@ -9,7 +9,7 @@ venv 종료
 deactivate
 
 '''
-api_key = '	b81bd814632ef49454b88b483de0b65a89cd7c4f'
+api_key = 'b81bd814632ef49454b88b483de0b65a89cd7c4f'
 dart_fss.set_api_key(api_key=api_key)
 
 # https://dart-fss.readthedocs.io/en/latest/dart_corp.html
@@ -53,7 +53,7 @@ df = pd.DataFrame(data['list'])
 df = df[df['se'] == '(연결)당기순이익(백만원)'][['corp_name','thstrm','frmtrm','lwfr']]
 df.columns = ['기업명','2021','2020','2019']
 
-#
+
 # https://opendart.fss.or.kr/guide/detail.do?apiGrpCd=DS002&apiId=2019011
 data = dart_fss.api.info.emp_sttus(corp_code, '2021', '11011')
 
@@ -78,6 +78,7 @@ def get_salary(corp_code):
       '연봉(남)':df[df['sexdstn'] == '남'].iloc[0,2],
       '연봉(여)':df[df['sexdstn'] == '여'].iloc[0,2]
   }
+  
   df_doc = pd.DataFrame([doc])
   df_result = pd.concat([df_result, df_doc], ignore_index=True)
 
@@ -86,6 +87,13 @@ def get_salary(corp_code):
 
   return df_result
 
+
+
+#to numeric 지금은 string이니까 , replace 후 integer로
+  df_result['연봉(남)'] = pd.to_numeric(df_result['연봉(남)'].str.replace(',',''))
+  df_result['연봉(여)'] = pd.to_numeric(df_result['연봉(여)'].str.replace(',',''))
+
+  return df_result
 
 
 dfs = []
@@ -105,3 +113,6 @@ df_result['차이(남-여)'] = df_result['연봉(남)'] - df_result['연봉(여)
 df_result['평균'] = (df_result['연봉(남)']+df_result['연봉(여)'])/2
 
 # print(df_result.sort_values(by="차이(남-여)",ascending=True))
+
+corp_codes = list(df_listed.sample(10)['corp_code'])
+print(corp_codes)
