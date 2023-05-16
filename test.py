@@ -1,17 +1,17 @@
-# students = [
-# {"class": "A"}, 
-# {"all_data": 
-# 	[{"name" : "Alice", "english": 80, "science": 62},
-#   {"name" : "Bob", "english": 73, "science": 70},
-#   {"name" : "Charlie", "english": 60, "science": 83},
-#   {"name" : "David", "english": 50, "science": 79},
-#   {"name" : "Eve", "english": 75, "science": 58}]
-# }
-# ]
+students = [
+{"class": "A"}, 
+{"all_data": 
+	[{"name" : "Alice", "english": 80, "science": 62},
+  {"name" : "Bob", "english": 73, "science": 70},
+  {"name" : "Charlie", "english": 60, "science": 83},
+  {"name" : "David", "english": 50, "science": 79},
+  {"name" : "Eve", "english": 75, "science": 58}]
+}
+]
 
-# print(students[1]['all_data'][0]['name'])
+print(students[1]['all_data'][0]['name'])
 
-#
+
 '''
 구의 반지름을 r이라고 할 때
 부피는 4/3 * pi ^3
@@ -23,7 +23,7 @@ key_list = ["name","hp","mp","level"]
 value_list = ['전사',200,30,5]
 
 dic = {key_list[0]:value_list[0]}
-print(dic)
+
 
 #for문 연습문제
 numbers= [1,2,3,4,5,2,3,2,15,6,8,12,3,4,5,9]
@@ -53,7 +53,6 @@ a = 1
 b = 2
 
 c = "{} 더하기 {}은 {}입니다".format(a,b,a+b)
-
 
 
 #append , concat

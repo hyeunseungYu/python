@@ -70,3 +70,12 @@ flattened_list = []
 #         flattened_list.append(item)
 
 # print(flattened_list)
+
+'''
+Q6
+for문을 사용하여 1부터 10까지의 숫자 중에서 홀수만 출력되도록 해주세요
+'''
+
+# for num in range(1, 11):
+#     if num % 2 != 0:
+#         print(num)

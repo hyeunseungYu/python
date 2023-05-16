@@ -51,8 +51,6 @@ is_adult= np.where(df["age"] > 18, "성인", "청소년")
 
 df["is_adult"] = is_adult
 
-print(df)
-
 # 최대값의 인덱스 뽑을떄
 idx = df[df["city"] == "서울"]["age"].idxmax()
 
@@ -72,6 +70,7 @@ print(len(df[(df["city"] == "서울") & (df["age"] > 18)]))
 
 # marketcap = all_data['TSLA']['price']['marketCap']
 # formatted_marketcap = '{:,.0f}'.format(marketcap)
+#{:,}로 쓰면 됨
 # print(formatted_marketcap)
 
 
