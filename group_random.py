@@ -1,44 +1,33 @@
 
 import random
 
-temp = [
-'강민우',
+input_string = '''강민우
+강상훈
+권서연
+김대건
+김소연
+김수현
+김영미
+김현진
+노도희
+박한진
+신지원
+윤나연
+이범필
+이용인
+이윤선
+이재희
+이하정
+장애리
+조성구
+조원규
+채연아
+최영철
+홍노영
+홍윤정'''
 
-'권서연',
-'김대건',
-'김소연',
-'김수현',
-'김영미',
+temp = input_string.split('\n')
 
-'노도희',
-
-'신지원',
-
-'이범필',
-'이용인',
-
-'이재희',
-'이하정',
-'장애리',
-
-'조원규',
-'채연아',
-'최영철',
-'홍노영',
-'채연아',
-'최영철',
-'홍노영',
-'채연아',
-'최영철',
-'홍노영',
-'채연아',
-'최영철',
-'홍노영',
-'채연아',
-'최영철',
-'홍노영',
-'홍윤정',
-]
 
 def get_random_groups(lst, group_size):
     
@@ -50,12 +39,12 @@ def get_random_groups(lst, group_size):
     # 그룹 개수만큼 반복
     for i in range(num_groups):
         start_idx = i * group_size  # 현재 그룹의 시작 인덱스 계산
-        print("start_idx >",start_idx)
+        # print("start_idx >",start_idx)
         end_idx = start_idx + group_size  # 현재 그룹의 끝 인덱스 계산
-        print("end_idx >",end_idx)
+        # print("end_idx >",end_idx)
         group = lst[start_idx:end_idx]  # 현재 그룹을 리스트 슬라이싱을 통해 추출
-        print(group)
-        print("################################")
+        # print(group)
+        # print("################################")
         random_groups.append(group)  # 추출한 그룹을 random_groups 리스트에 추가
 
     return random_groups  # 랜덤 그룹의 리스트 반환
@@ -84,5 +73,7 @@ def line_change(lis):
 
 random_group = get_random_groups(temp, 8)
 
+
 line_change(random_group)
+
 # print(random_elements)
