@@ -15,10 +15,10 @@ reports = dart_fss.filings.search(corp_code=corp_code, bgn_de='20230505',page_no
 file_names = []  # 파일 이름을 저장할 리스트
 
 # 파생결합사채 제목으로 된 항목만 뽑아서 보고서 PDF로 다운
-for report in reports.report_list:
-    if '일괄신고추가서류(파생결합사채-주가연계파생결합사채)' in report.report_nm:
+for report in reports.report_list: #검색 결과로 나온 보고서를 반복문으로 순회
+    if '일괄신고추가서류(파생결합사채-주가연계파생결합사채)' in report.report_nm: # 보고서의 이름에 조건에 해당하는 것이 있는지를 확인
         print('있음')
-        attached_file = report.extract_attached_files()[0]
+        attached_file = report.extract_attached_files()[0] #report의 파일 추출. 리스트에 요소 하나밖에 없음
         file_name = attached_file.to_dict()['filename']
         file_names.append(file_name)  # 파일 이름을 리스트에 추가
         attached_file.download('.')       
@@ -28,6 +28,10 @@ for report in reports.report_list:
     else:
         print('없음')
 print(file_names)  # 파일 이름 리스트 출력
+
+########################################
+#pdf에서 특정 페이지 추출                   #                                                     
+########################################
 
 import fitz
 from pdf2docx import Converter
@@ -98,6 +102,7 @@ import fitz
 import os
 import shutil
 
+# 이전에 파일 이름을 만들던 함수에서 파일 네이밍이 너무 길게 이어져서 첫 줄을 기준으로 네이밍되도록 했습니다.
 def find_sentence_with_keyword(pdf_file_path, keyword):
     doc = fitz.open(pdf_file_path)
     for page in doc:

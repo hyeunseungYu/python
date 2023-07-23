@@ -1,6 +1,7 @@
 import smtplib
 from email.message import EmailMessage
 
+#메일 서버 변수를 지정하지 않은 문제, 함수를 실행시키지 않은 문제, 함수 인자를 잘못 사용하였던 문제가 있었음
 SMTP_SERVER = 'smtp.gmail.com'
 SMTP_PORT = 465
 email_addr = "hyeunseung03@gmail.com"

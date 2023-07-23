@@ -1,21 +1,17 @@
 
 import random
 
-input_string = '''강민우
-강상훈
-권서연
+input_string = '''권서연
 김대건
 김소연
 김수현
 김영미
 김현진
 노도희
-박한진
 신지원
 윤나연
 이범필
 이용인
-이윤선
 이재희
 이하정
 장애리
@@ -23,8 +19,7 @@ input_string = '''강민우
 조원규
 채연아
 최영철
-홍노영
-홍윤정'''
+홍노영'''
 
 temp = input_string.split('\n')
 

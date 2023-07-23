@@ -27,9 +27,10 @@ test_df = pd.DataFrame([doc])
 new_df = pd.DataFrame({"name": ["세종"], "age": [14]})
 df = pd.concat([df, new_df], ignore_index=True)
 
+
 df["city"] = ["서울", "부산", "서울", "대구", "서울"]
 
-############################################################################
+###########################################################################
 
 
 # concat예시
@@ -59,6 +60,7 @@ median_age = df["age"].median()
 
 # df[df['city'] == '서울' & df['age'] >18] 이런 식으로 하면 연산자의 우선순위가 달라 에러가 발생함
 df[(df["city"] == "서울") & (df["age"] > 18)]
+
 
 # dataFrame크기 반환
 print(df.shape)

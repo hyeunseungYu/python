@@ -2,6 +2,9 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
 
+
+#time.sleep을 사용하지 않았던 문제
+
 # Chrome 실행
 driver = webdriver.Chrome()
 # dart 페이지로 이동

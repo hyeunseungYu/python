@@ -2,6 +2,8 @@ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 
+#bs4 기본 사용에 대한 질문
+
 search_url = 'https://movie.daum.net/ranking/reservation'
 headers = {'User-Agent': 'Mozilla/5.0'}
 response = requests.get(search_url, headers=headers)
